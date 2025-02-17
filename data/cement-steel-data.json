@@ -1,20 +1,5 @@
 [
     {
-        "projectID":"Concrete Chemicals,",
-        "company":"CEMEX",
-        "location":"R\u00fcdersdorf",
-        "country":"Germany",
-        "latitude":52.4848698925,
-        "longitude":13.8307696339,
-        "scale":"Demonstration - operational",
-        "status":"operational",
-        "tech_full":"CCUS - post-combustion",
-        "png":1,
-        "tech":"cement",
-        "bubble_size":2,
-        "zoom":13
-    },
-    {
         "projectID":"CATCH4CLIMATE,",
         "company":"Buzzi Unicem, Heidelberg Materials, Schwenk and Vicat",
         "location":"Mergelstetten",
@@ -24,10 +9,9 @@
         "scale":"Demonstration -  under construction",
         "status":"under_construction",
         "tech_full":"CCU - oxyfuel",
-        "png":2,
         "tech":"cement",
         "bubble_size":2,
-        "zoom":15
+        "zoom":12
     },
     {
         "projectID":"Leilac-1,",
@@ -39,10 +23,9 @@
         "scale":"Pilot - operational",
         "status":"operational",
         "tech_full":"CCS - direct separation",
-        "png":3,
         "tech":"cement",
         "bubble_size":2,
-        "zoom":15
+        "zoom":13
     },
     {
         "projectID":"Brevik CCS,",
@@ -54,43 +37,12 @@
         "scale":"Full scale -  under construction",
         "status":"under_construction",
         "tech_full":"CCS - post-combustion",
-        "png":4,
         "tech":"cement",
         "bubble_size":2,
         "zoom":15
     },
     {
-        "projectID":"Carbon2Business,",
-        "company":"Holcim",
-        "location":"L\u00e4gerdorf",
-        "country":"Germany",
-        "latitude":53.8761964706,
-        "longitude":9.5793571236,
-        "scale":"Full scale -  under construction",
-        "status":"under_construction",
-        "tech_full":"CCUS - oxyfuel",
-        "png":5,
-        "tech":"cement",
-        "bubble_size":2,
-        "zoom":13
-    },
-    {
-        "projectID":"L\u00e4gerdorf,",
-        "company":"Heidelberg Materials",
-        "location":"Antoing",
-        "country":"Belgium",
-        "latitude":50.575402185,
-        "longitude":3.4448096347,
-        "scale":"Full scale -  under construction",
-        "status":"under_construction",
-        "tech_full":"CCUS - oxyfuel and amine",
-        "png":6,
-        "tech":"cement",
-        "bubble_size":2,
-        "zoom":13
-    },
-    {
-        "projectID":"XLR8 CCS Heidelberg,",
+        "projectID":"XLR8 CCS Heidelberg",
         "company":"Heidelberg Materials",
         "location":"Ketton",
         "country":"United Kingdom",
@@ -99,10 +51,9 @@
         "scale":"Pilot - operational",
         "status":"operational",
         "tech_full":"CCS - post-combustion",
-        "png":7,
         "tech":"cement",
         "bubble_size":2,
-        "zoom":14
+        "zoom":13
     },
     {
         "projectID":"Monselice CCS,",
@@ -114,7 +65,6 @@
         "scale":"Pilot - operational",
         "status":"operational",
         "tech_full":"CCS - not stated",
-        "png":8,
         "tech":"cement",
         "bubble_size":2,
         "zoom":13
@@ -126,10 +76,9 @@
         "country":"France",
         "latitude":46.6306557342,
         "longitude":-1.1571965721,
-        "scale":"Pilot - operational",
+        "scale":"Demonstration - operational",
         "status":"operational",
         "tech_full":"klin for calcined clay - flash calciner",
-        "png":9,
         "tech":"cement",
         "bubble_size":2,
         "zoom":14
@@ -144,43 +93,40 @@
         "scale":"Full scale -  under construction",
         "status":"under_construction",
         "tech_full":"klin for calcined clay - flash calciner",
-        "png":10,
         "tech":"cement",
         "bubble_size":2,
-        "zoom":15
+        "zoom":14
     },
     {
-        "projectID":null,
+        "projectID":"ECOPlanet",
         "company":"Holcim",
-        "location":"Bouches-du-Rh\u00f4ne",
+        "location":"Le Teil",
         "country":"France",
         "latitude":43.4207599613,
         "longitude":5.3865104515,
         "scale":"Full scale - operational",
         "status":"operational",
         "tech_full":"klin for calcined clay - not stated",
-        "png":11,
         "tech":"cement",
         "bubble_size":2,
-        "zoom":14
+        "zoom":13
     },
     {
         "projectID":"ECoClay,",
         "company":"FLSmidth",
-        "location":"Mariager Fjord",
+        "location":"Dania",
         "country":"Denmark",
-        "latitude":56.6871169358,
-        "longitude":10.0519126375,
+        "latitude":56.6872112389,
+        "longitude":10.0518911666,
         "scale":"Pilot -  under construction",
         "status":"under_construction",
         "tech_full":"klin for calcined clay - electric calciner",
-        "png":12,
         "tech":"cement",
         "bubble_size":2,
-        "zoom":15
+        "zoom":13
     },
     {
-        "projectID":null,
+        "projectID":"proximA TechZero",
         "company":"Holcim",
         "location":"Saint-Pierre-la-Cour",
         "country":"France",
@@ -189,7 +135,6 @@
         "scale":"Full scale - operational",
         "status":"operational",
         "tech_full":"klin for calcined clay - biomass fueled and waste recovery",
-        "png":13,
         "tech":"cement",
         "bubble_size":2,
         "zoom":13
@@ -204,7 +149,6 @@
         "scale":"Demonstration - operational",
         "status":"operational",
         "tech_full":"CCU for BF-BOF - CCU for ethanol production",
-        "png":14,
         "tech":"steel",
         "bubble_size":2,
         "zoom":13
@@ -219,7 +163,6 @@
         "scale":"Pilot - operational ",
         "status":"operational ",
         "tech_full":"ESR - hydrogen plasma smelting reduction",
-        "png":15,
         "tech":"steel",
         "bubble_size":2,
         "zoom":13
@@ -234,7 +177,6 @@
         "scale":"Pilot - operational",
         "status":"operational",
         "tech_full":"electrowinning - electrolysis with renewables",
-        "png":16,
         "tech":"steel",
         "bubble_size":2,
         "zoom":16
@@ -249,7 +191,6 @@
         "scale":"Pilot - operational",
         "status":"operational",
         "tech_full":"CCS for BF-BOF - demonstration of CCS from industrial activities",
-        "png":17,
         "tech":"steel",
         "bubble_size":2,
         "zoom":13
@@ -264,7 +205,6 @@
         "scale":"Demonstration - operational",
         "status":"operational",
         "tech_full":"H2 production - green electricity electrolysis",
-        "png":18,
         "tech":"steel",
         "bubble_size":2,
         "zoom":12
@@ -279,7 +219,6 @@
         "scale":"Pilot - operational ",
         "status":"operational ",
         "tech_full":"H2 production - green electricity electrolysis",
-        "png":19,
         "tech":"steel",
         "bubble_size":2,
         "zoom":13
@@ -294,7 +233,6 @@
         "scale":"Demonstration -  under construction",
         "status":"under_construction",
         "tech_full":"Biomass for BF - biocoal for BF with CCS",
-        "png":20,
         "tech":"steel",
         "bubble_size":2,
         "zoom":13
@@ -309,7 +247,6 @@
         "scale":"Full scale -  under construction",
         "status":"under_construction",
         "tech_full":"H2 production ",
-        "png":21,
         "tech":"steel",
         "bubble_size":2,
         "zoom":13
@@ -324,25 +261,9 @@
         "scale":"Full scale -  under construction",
         "status":"under_construction",
         "tech_full":"NG-DRI to H-DRI - midrex flex",
-        "png":22,
         "tech":"steel",
         "bubble_size":2,
         "zoom":13
-    },
-    {
-        "projectID":"Oxel\u00f6sund mini-mill,",
-        "company":"SSAB",
-        "location":"Oxel\u00f6sund",
-        "country":"Sweden",
-        "latitude":58.6760961099,
-        "longitude":17.1284402038,
-        "scale":"Full scale -  under construction",
-        "status":"under_construction",
-        "tech_full":"BF-BOF to EAF for green iron - EAF using HBI and scrap",
-        "png":23,
-        "tech":"steel",
-        "bubble_size":2,
-        "zoom":12
     },
     {
         "projectID":"HYFOR,",
@@ -353,8 +274,7 @@
         "longitude":15.065182,
         "scale":"Pilot - operational",
         "status":"operational",
-        "tech_full":"H-DRI - H-DRI and hy4smelt",
-        "png":24,
+        "tech_full":"H-DRI - H-DRI and Hy4Smelt",
         "tech":"steel",
         "bubble_size":2,
         "zoom":13
@@ -369,10 +289,9 @@
         "scale":"Full scale -  under construction",
         "status":"under_construction",
         "tech_full":"H-DRI - green electricity electrolysis and EAF",
-        "png":25,
         "tech":"steel",
         "bubble_size":2,
-        "zoom":13
+        "zoom":12
     },
     {
         "projectID":"WindH2  (Demonstration for SALCOS),",
@@ -384,37 +303,34 @@
         "scale":"Demonstration - operational",
         "status":"operational",
         "tech_full":"H2 production - green electricity electrolysis",
-        "png":26,
-        "tech":"steel",
-        "bubble_size":2,
-        "zoom":13
-    },
-    {
-        "projectID":null,
-        "company":"ArcelorMittal",
-        "location":"Dunkirk",
-        "country":"France",
-        "latitude":51.041274,
-        "longitude":2.292948,
-        "scale":"Full scale -  under construction",
-        "status":"under_construction",
-        "tech_full":"NG-DRI to H-DRI  and EAFf ; complemented with CCS\nnatural gas will gradually be phased out as the new equipment will be fed by renewable or low-carbon hydrogen, biogas and electricity. ",
-        "png":27,
         "tech":"steel",
         "bubble_size":2,
         "zoom":13
     },
     {
         "projectID":"HYBRIT,",
-        "company":"LKAB",
-        "location":"G\u00e4llivare",
+        "company":"SSAB, LKAB and Vattenfall",
+        "location":"Oxel\u00f6sund",
         "country":"Sweden",
-        "latitude":67.1956471525,
-        "longitude":20.7110459051,
-        "scale":"Demonstration -  under construction",
+        "latitude":58.670789,
+        "longitude":17.127786,
+        "scale":"Full scale -  under construction",
         "status":"under_construction",
-        "tech_full":"H-DRI and EAF",
-        "png":28,
+        "tech_full":"BF-BOF to EAF for green iron - EAF using HBI and scrap",
+        "tech":"steel",
+        "bubble_size":2,
+        "zoom":12
+    },
+    {
+        "projectID":"HYBRIT,",
+        "company":"SSAB, LKAB and Vattenfall",
+        "location":"Lule\u00e5",
+        "country":"Sweden",
+        "latitude":65.5523556174,
+        "longitude":22.2672942647,
+        "scale":"Pilot - operational",
+        "status":"operational",
+        "tech_full":"BF-BOF to EAF for green iron",
         "tech":"steel",
         "bubble_size":2,
         "zoom":12
@@ -429,40 +345,9 @@
         "scale":"Demonstration - operational",
         "status":"operational",
         "tech_full":"NG-DRI to H-DRI - flexible operation NG and H2",
-        "png":29,
         "tech":"steel",
         "bubble_size":2,
         "zoom":12
-    },
-    {
-        "projectID":"GravitHy,",
-        "company":"Marcegaglia Group ",
-        "location":"Fos sur Mer",
-        "country":"France",
-        "latitude":43.4408347969,
-        "longitude":4.9241801086,
-        "scale":"Full scale -  under construction",
-        "status":"under_construction",
-        "tech_full":"H-DRI - green electricity electrolysis ",
-        "png":30,
-        "tech":"steel",
-        "bubble_size":2,
-        "zoom":13
-    },
-    {
-        "projectID":null,
-        "company":"Hydnum Steel",
-        "location":"Puertollano",
-        "country":"Spain",
-        "latitude":38.6874,
-        "longitude":-4.108386,
-        "scale":"Full scale -  under construction",
-        "status":"under_construction",
-        "tech_full":"H-DRI - green electricity electrolysis  and EAF",
-        "png":31,
-        "tech":"steel",
-        "bubble_size":2,
-        "zoom":16
     },
     {
         "projectID":"Greentec,",
@@ -473,11 +358,10 @@
         "longitude":14.33434,
         "scale":"Full scale -  under construction",
         "status":"under_construction",
-        "tech_full":"BF-BOF to EAF for green iron - EAFusing HBI and scrap",
-        "png":32,
+        "tech_full":"BF-BOF to EAF for green iron - EAF using HBI and scrap",
         "tech":"steel",
         "bubble_size":2,
-        "zoom":13
+        "zoom":12
     },
     {
         "projectID":"Greentec,",
@@ -488,8 +372,7 @@
         "longitude":15.065182,
         "scale":"Full scale -  under construction",
         "status":"under_construction",
-        "tech_full":"BF-BOF to EAF for green iron - EAFusing HBI and scrap",
-        "png":33,
+        "tech_full":"BF-BOF to EAF for green iron - EAF using HBI and scrap",
         "tech":"steel",
         "bubble_size":2,
         "zoom":13
@@ -504,10 +387,9 @@
         "scale":"Pilot - operational",
         "status":"operational",
         "tech_full":"H-DRI - green electricity electrolysis ",
-        "png":34,
         "tech":"steel",
         "bubble_size":2,
-        "zoom":15
+        "zoom":16
     },
     {
         "projectID":"CAP2U,",
@@ -519,8 +401,35 @@
         "scale":"Full scale - under construction ",
         "status":"under_construction",
         "tech_full":"CCU - not stated",
-        "png":35,
         "tech":"cement",
+        "bubble_size":2,
+        "zoom":13
+    },
+    {
+        "projectID":"ANVAR.beta,",
+        "company":"Heidelberg Materials",
+        "location":"Devnya",
+        "country":"Bulgaria",
+        "latitude":43.23457119314487,
+        "longitude":27.595268196582634,
+        "scale":"Pilot - under construction",
+        "status":"under_construction",
+        "tech_full":"CCUS - oxyfuel and amine",
+        "tech":"cement",
+        "bubble_size":2,
+        "zoom":14
+    },
+    {
+        "projectID":"Carbon2Chem",
+        "company":"thyssenkrupp",
+        "location":"\u00a0Duisburg",
+        "country":"Germany",
+        "latitude":51.3649809677,
+        "longitude":6.7198494969,
+        "scale":"Pilot - under construction",
+        "status":"under_construction",
+        "tech_full":"NG-DRI to H-DRI",
+        "tech":"steel",
         "bubble_size":2,
         "zoom":13
     }
