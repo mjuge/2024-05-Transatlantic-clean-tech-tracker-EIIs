@@ -43,7 +43,7 @@ jQuery(document).ready(async function () {
 
     async function fetchCitiesGeoJSON() {
         try {
-            const response = await fetch('data/cities.json');
+            const response = await fetch('cities.json');
             const data = await response.json();
     
             return data.features.map(feature => ({
@@ -56,50 +56,130 @@ jQuery(document).ready(async function () {
             return [];
         }
     }
+
+
+    
     
     
     async function fetchPoints(topology) {
         try {
-            const response = await fetch('data/cement-steel-data.json');
+            const response = await fetch('cement-steel-data.json');
             const rawData = await response.json();
     
             const colorMap = {
-                steel: { under_construction: '#FFA07A', operational: '#FF4500',  unknown: '#CCCCCC' },
-                cement: { under_construction: '#98FB98', operational: '#32CD32',  unknown: '#AAAAAA' },
+                steel: { under_construction: '#FFA07A', operational: '#FF4500', unknown: '#CCCCCC' },
+                cement: { under_construction: '#98FB98', operational: '#32CD32', unknown: '#AAAAAA' },
             };
     
-            // Map raw data to points
-            allPoints = rawData.map(item => ({
-                name: item.company || 'Unknown',
-                lat: parseFloat(item.latitude),
-                lon: parseFloat(item.longitude),
-                bubble_size: item.bubble_size || 0.1,
-                tech: item.tech || 'unknown',
-                tech_full: item.tech_full || '',
-                png: item.png || '',
-                zoom: item.zoom || 13,
-                html: item.html || '',
-                projectID: item.projectID || '',
-                component_full: item.component_full || '',
-                location: item.location || 'Unknown',
-                status: item.status || 'unknown',
-                scale: item.scale || 'unknown',
-                status_message: item.scale ? `${item.scale}` : 'Unknown',
-                country: item.country || 'Unknown',
-                color: colorMap[item.tech]?.[item.status] || '#000000',
-            }));
+            // Adjust coordinates function
+            function adjustCoordinatesForHighcharts(lat, lon, topology) {
+                const mapData = Highcharts.geojson(topology);
     
-            // Filter points by country boundaries if topology is provided
-            if (topology) {
-                allPoints = filterPointsInCountry(allPoints, topology);
+                // Function to check if a point is inside a polygon
+                const isPointInPolygon = (point, polygon) => {
+                    const [x, y] = point;
+                    let inside = false;
+    
+                    for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+                        const xi = polygon[i][0], yi = polygon[i][1];
+                        const xj = polygon[j][0], yj = polygon[j][1];
+    
+                        const intersect = yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi;
+                        if (intersect) inside = !inside;
+                    }
+                    return inside;
+                };
+    
+                // Check if the given point is inside the country's boundaries
+                const pointCoords = [lon, lat];
+                let inside = false;
+    
+                mapData.forEach(feature => {
+                    const geometry = feature.geometry;
+                    if (geometry.type === "Polygon") {
+                        if (isPointInPolygon(pointCoords, geometry.coordinates[0])) {
+                            inside = true;
+                        }
+                    } else if (geometry.type === "MultiPolygon") {
+                        geometry.coordinates.forEach(polygon => {
+                            if (isPointInPolygon(pointCoords, polygon[0])) {
+                                inside = true;
+                            }
+                        });
+                    }
+                });
+    
+                if (inside) {
+                    return { lat, lon }; // Return original coordinates if inside
+                }
+    
+                console.log(`Debug: Point (${lat}, ${lon}) is outside the map. Adjusting...`);
+    
+                // Find the nearest point inside the map
+                let nearestPoint = null;
+                let minDistance = Infinity;
+    
+                mapData.forEach(feature => {
+                    feature.geometry.coordinates.forEach(polygon => {
+                        polygon[0].forEach(([polyLon, polyLat]) => {
+                            const distance = Math.sqrt((lat - polyLat) ** 2 + (lon - polyLon) ** 2);
+                            if (distance < minDistance) {
+                                minDistance = distance;
+                                nearestPoint = { lat: polyLat, lon: polyLon };
+                            }
+                        });
+                    });
+                });
+    
+                if (nearestPoint) {
+                    console.log(`Debug: Adjusted to nearest point (${nearestPoint.lat}, ${nearestPoint.lon})`);
+                    return nearestPoint;
+                }
+    
+                // If no nearest point found, return the original (fallback)
+                return { lat, lon };
             }
     
+            // Map raw data to points with adjusted coordinates for Highcharts
+            allPoints = rawData.map(item => {
+                let originalLat = parseFloat(item.latitude);
+                let originalLon = parseFloat(item.longitude);
+                let adjustedCoords = topology ? adjustCoordinatesForHighcharts(originalLat, originalLon, topology) : { lat: originalLat, lon: originalLon };
+            
+                return {
+                    name: item.company || 'Unknown',
+                    lat: originalLat, // Keep original for Leaflet
+                    lon: originalLon,
+                    highchartLat: adjustedCoords.lat, // Adjusted for Highcharts
+                    highchartLon: adjustedCoords.lon,
+                    bubble_size: item.bubble_size || 0.1,
+                    tech: item.tech || 'unknown',
+                    tech_full: item.tech_full || '',
+                    png: item.png || '',
+                    zoom: item.zoom || 13,
+                    html: item.html || '',
+                    projectID: item.projectID || '',
+                    component_full: item.component_full || '',
+                    location: item.location || 'Unknown',
+                    status: item.status || 'unknown',
+                    scale: item.scale || 'unknown',
+                    status_message: item.scale ? `${item.scale}` : 'Unknown',
+                    country: item.country || 'Unknown',
+                    color: colorMap[item.tech]?.[item.status] || '#000000',
+                };
+            });
+            
+            // Apply the function to avoid perfect overlays
+            allPoints = adjustOverlappingPoints(allPoints);
+            
+            console.log("Debug: tkH2Steel Coordinates:", 51.491649, 6.733051);
+            console.log("Debug: Oxelösund Coordinates:", 58.6760961099, 17.1284402038);
             console.log("Debug: Points processed successfully:", allPoints.length);
+    
         } catch (error) {
             console.error('Error fetching points:', error);
         }
     }
-    
     
     function filterPointsInCountry(points, topology) {
         const mapData = Highcharts.geojson(topology);
