@@ -43,7 +43,7 @@ jQuery(document).ready(async function () {
 
     async function fetchCitiesGeoJSON() {
         try {
-            const response = await fetch('cities.json');
+            const response = await fetch('data/cities.json');
             const data = await response.json();
     
             return data.features.map(feature => ({
@@ -63,7 +63,7 @@ jQuery(document).ready(async function () {
     
     async function fetchPoints(topology) {
         try {
-            const response = await fetch('cement-steel-data.json');
+            const response = await fetch('data/cement-steel-data.json');
             const rawData = await response.json();
     
             const colorMap = {
